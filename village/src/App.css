@@ -3,8 +3,7 @@
   background: rgba(255, 255, 255, 0.8);
   width: 100%;
   max-width: 600px;
-  margin: 50px auto;
-  /* border-radius: 20px; */
+  margin: 150px auto 0 auto;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
   color: #323232;
@@ -53,20 +52,25 @@ a:hover {
   font-family: 'Londrina Solid', cursive;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px #323232;
+  color: #88CCFF;
 }
 
 .Smurfs ul {
   padding: 0;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .Smurf {
   border: 1px solid #323232;
-  width: 45%;
+  width: 40%;
   max-width: 300px;
   box-shadow: 0 0 15px rgba(50, 50, 50, 0.5);
   padding-bottom: 20px;
+  margin: 20px;
 }
 
 .Smurf h3 {

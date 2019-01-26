@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class SmurfForm extends Component {
         age: '',
         height: ''
       }
-      
     };
   }
 
@@ -19,13 +19,14 @@ class SmurfForm extends Component {
     // add code to create the smurf using the api
     axios
       .post('http://localhost:3333/smurfs', this.state.newSmurf)
-      .then(response => {
-        console.log(response)
+      .then(
+        this.props.history.push('/'),
         this.setState({
           name: '',
           age: '',
           height: ''
-      })})
+        })
+      )
       .catch(error => console.log(error))
   }
 
@@ -68,4 +69,4 @@ class SmurfForm extends Component {
   }
 }
 
-export default SmurfForm;
+export default withRouter(SmurfForm);
