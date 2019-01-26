@@ -1,3 +1,46 @@
 .App {
   text-align: center;
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #323232;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+  color: #323232;
+}
+a:hover {
+  color: #88CCFF;
+  background: #323232;
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+.nav-link {
+  padding: 10px;
+}
+.activeNav {
+  background: #323232;
+  color: #88CCFF;
+}
+.Smurfs ul {
+  display: flex; 
+  justify-content: space-around;
+}
+
+.Smurf {
+  border: 1px solid #323232;
+  width: 30%;
+  border-radius: 20px;
+}
+
+.Smurf h3 {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
