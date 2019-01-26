@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      smurfs: [],
+      smurfs: []
     };
   }
 
@@ -23,6 +23,7 @@ class App extends Component {
       .then(response => this.setState({ smurfs: response.data }))
       .catch(error => console.log(error))
   }
+  
   render() {
     return (
       <div className="App">
