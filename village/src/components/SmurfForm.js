@@ -1,50 +1,66 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      newSmurf: {
+        name: '',
+        age: '',
+        height: ''
+      }
     };
   }
 
   addSmurf = event => {
     event.preventDefault();
     // add code to create the smurf using the api
-
-    this.setState({
-      name: '',
-      age: '',
-      height: ''
-    });
+    axios
+      .post('http://localhost:3333/smurfs', this.state.newSmurf)
+      .then( response => {
+        this.props.updateSmurfList(response.data);
+        this.props.history.push('/');
+        this.setState({
+          name: '',
+          age: '',
+          height: ''
+        });
+      })
+      .catch(error => console.log(error))
   }
 
   handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ 
+      newSmurf: {
+        ...this.state.newSmurf,
+        [e.target.name]: e.target.value
+      }
+    });
   };
 
   render() {
     return (
       <div className="SmurfForm">
+        <h1>Add a Smurf:</h1>
         <form onSubmit={this.addSmurf}>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
-            value={this.state.name}
+            value={this.state.newSmurf.name}
             name="name"
           />
           <input
             onChange={this.handleInputChange}
             placeholder="age"
-            value={this.state.age}
+            value={this.state.newSmurf.age}
             name="age"
           />
           <input
             onChange={this.handleInputChange}
             placeholder="height"
-            value={this.state.height}
+            value={this.state.newSmurf.height}
             name="height"
           />
           <button type="submit">Add to the village</button>
@@ -54,4 +70,4 @@ class SmurfForm extends Component {
   }
 }
 
-export default SmurfForm;
+export default withRouter(SmurfForm);

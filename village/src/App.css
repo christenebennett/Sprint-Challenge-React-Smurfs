@@ -1,3 +1,110 @@
 .App {
   text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  max-width: 600px;
+  margin: 150px auto 0 auto;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  color: #323232;
+  padding-bottom: 20px;
+  box-shadow: 0 0 15px rgba(50, 50, 50, 0.5);
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: lowercase;
+  letter-spacing: 1.5px;
+}
+
+a:hover {
+  color: #88CCFF;
+  background: #323232;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #323232;
+}
+
+.nav-link {
+  padding: 10px;
+  transition: all .3s ease-out;
+}
+
+.activeNav {
+  background: #323232;
+  color: #88CCFF;
+}
+
+.Smurfs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2%;
+}
+
+.Smurfs h1,
+.SmurfForm h1 {
+  font-family: 'Londrina Solid', cursive;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px #323232;
+  color: #88CCFF;
+}
+
+.Smurfs ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Smurf {
+  border: 1px solid #323232;
+  width: 40%;
+  max-width: 300px;
+  box-shadow: 0 0 15px rgba(50, 50, 50, 0.5);
+  padding-bottom: 20px;
+  margin: 20px;
+}
+
+.Smurf h3 {
+  font-family: 'Londrina Solid', cursive;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.SmurfForm form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.SmurfForm input {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+}
+
+button {
+  border: none;
+  height: auto;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: all .3s ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #ffffff;
+  background: #88CCFF;
 }
