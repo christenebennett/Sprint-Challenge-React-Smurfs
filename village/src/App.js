@@ -25,6 +25,10 @@ class App extends Component {
       .catch(error => console.log(error))
   }
   
+  updateSmurfList = (newSmurfs) => {
+    this.setState({ smurfs: newSmurfs})
+  }
+
   render() {
     return (
       <div className="App">
@@ -32,7 +36,13 @@ class App extends Component {
           <NavLink exact activeClassName="activeNav" className="nav-link" to="/">Home</NavLink>
           <NavLink activeClassName="activeNav" className="nav-link" to="/smurf-form">Add Smurf</NavLink>
         </div>
-        <Route path="/smurf-form" component={ SmurfForm } />
+        {/* <Route path="/smurf-form" component={ SmurfForm } /> */}
+        <Route exact path="/smurf-form" render={ props => 
+          <SmurfForm 
+            {...props} 
+            updateSmurfList={ this.updateSmurfList }
+          /> } 
+        />
         <Route exact path="/" render={ props => 
           <Smurfs 
             {...props} 
